@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: shams-platform
+    runtime: docker
+    plan: starter
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: FACE_ENC_KEY
+        sync: false
+      - key: APP_TZ
+        value: Asia/Tashkent
+    disk:
+      name: shams-data
+      mountPath: /app/data
+      sizeGB: 1
